@@ -7,7 +7,9 @@ from PIL import Image
 
 import os
 from io import BytesIO
-
+# This script reads a director full of images and lets Ollama with lava, describe what is in each image then lastly it saves the outputas a CSV.
+# This CSV could possibly be used again as imput data for another agent to quickly retrieve photos based in a chat.
+# Note: if a image has been handled, the system will not rerun lava against it, only new images in the folder.
 # Load the DataFrame from a CSV file, or create a new one if the file doesn't exist
 def load_or_create_dataframe(filename):
     if os.path.isfile(filename):
